@@ -1,6 +1,6 @@
 from aiogram.types import Message
 
-from keyboards.user_buttons import first_keyboard
+from keyboards.first_kb import first_keyboard
 from lexicon.messages import start_message
 
 
