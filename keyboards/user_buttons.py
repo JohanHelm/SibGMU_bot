@@ -3,23 +3,23 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from lexicon import links
 
 news_button = InlineKeyboardButton(
-    text='Наши новости!',
+    text="Наши новости!",
     url=links.news_channel
 )
 
 services_button = InlineKeyboardButton(
-    text='Наши услуги.',
-    callback_data='show_all_services'
+    text="Наши услуги.",
+    callback_data="show_all_services"
 )
 
 faq_button = InlineKeyboardButton(
-    text='Часто задаваемые вопросы.',
-    callback_data='show_faq'
+    text="Часто задаваемые вопросы.",
+    callback_data="show_faq"
 )
 
 contacts_button = InlineKeyboardButton(
-    text='Контактная информация.',
-    callback_data='show_contacts'
+    text="Контактная информация.",
+    callback_data="show_contacts"
 )
 
 first_keyboard = InlineKeyboardMarkup(
