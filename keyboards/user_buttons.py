@@ -1,23 +1,29 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+from lexicon import links
 
-url_button = InlineKeyboardButton(
-    text='Ленина 1.',
-    url='https://yandex.ru/maps/67/tomsk/?ll=84.951979%2C56.455644&z=19'
+news_button = InlineKeyboardButton(
+    text='Наши новости!',
+    url=links.news_channel
 )
 
-
-pic_button = InlineKeyboardButton(
-    text='Мемасик',
-    callback_data='take_a_pic'
+services_button = InlineKeyboardButton(
+    text='Наши услуги.',
+    callback_data='show_all_services'
 )
 
-A2_button = InlineKeyboardButton(
-    text='А2 значение',
-    callback_data='take_A2_value'
+faq_button = InlineKeyboardButton(
+    text='Часто задаваемые вопросы.',
+    callback_data='show_faq'
 )
 
-keyboard = InlineKeyboardMarkup(
-    inline_keyboard=[[url_button, pay_button],
-                     [pic_button, A2_button]]
+contacts_button = InlineKeyboardButton(
+    text='Контактная информация.',
+    callback_data='show_contacts'
+)
+
+first_keyboard = InlineKeyboardMarkup(
+    inline_keyboard=[[news_button, services_button],
+                     [faq_button],
+                     [contacts_button]]
 )

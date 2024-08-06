@@ -1,0 +1,1 @@
+news_channel = "https://translate.google.com/?hl=ru"
