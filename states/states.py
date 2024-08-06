@@ -1,11 +1,10 @@
-from aiogram.fsm.state import default_state, State, StatesGroup
+from aiogram.fsm.state import State, StatesGroup
 
 
-class FSMChooseService(StatesGroup):
-    fill_name = State()
-    fill_age = State()
-    fill_gender = State()
-    upload_photo = State()
-    fill_education = State()
-    fill_wish_news = State()
+class FSMService(StatesGroup):
+    service = State()
+    material = State()
+    communication = State()
+
+
 
