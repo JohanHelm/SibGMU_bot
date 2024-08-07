@@ -21,3 +21,11 @@ async def material_plexiglass(callback: CallbackQuery, state: FSMContext):
     await callback.message.edit_text(text=application_message,
                                      reply_markup=application_keyboard)
     await state.set_state(FSMService.communication)
+
+
+async def communication_telegram(callback: CallbackQuery, state: FSMContext):
+    await state.update_data(communication=callback.data)
+    msg = str(await state.get_data())
+    await callback.message.edit_text(text=msg)
+                                     # reply_markup=application_keyboard)
+    await state.set_state(FSMService.communication)

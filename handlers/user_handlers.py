@@ -35,7 +35,7 @@ async def go_back(callback: CallbackQuery):
 
 
 async def process_cancel_command_state(callback: CallbackQuery, state: FSMContext):
-    print(await state.get_data())
     await state.clear()
     await callback.message.edit_text(text=service_description_message,
                                      reply_markup=services_keyboard)
+    await state.set_state(FSMService.service)
