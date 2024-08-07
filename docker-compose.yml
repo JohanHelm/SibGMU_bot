@@ -1,0 +1,12 @@
+version: '0.0.1'
+services:
+  sibgmu_bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sibgmu_bot_cont
+    env_file: 
+      - ./secrets/.env
+    restart: always
+    command: >
+        sh -c "python main.py"
