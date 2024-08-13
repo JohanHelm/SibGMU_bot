@@ -1,12 +1,26 @@
-name: Gitea Actions Demo
-run-name: ${{ gitea.actor }} is testing out Gitea Actions
-on: [push]
+name: Print workflow #Название workflow
+on: workflow_dispatch #Триггер, который будет вызывать workflow
 
-jobs:
-  Explore-Gitea-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "The job was automatically triggered by a ${{ gitea.event_name }} event."
+jobs: #Начало секции джобов
+
+  print_hello: #Начало секции первой джобы
+    runs-on: ubuntu-latest #Среда выполнения джоба
+    steps: #Начало секции шагов
+      - name: Print hello #Название шага
+        run: echo "Hello world!" #Команда, которая будет выполнена в терминале
+
+  print_full_technical_info: #Начало секции второй джобы
+        runs-on: ubuntu-latest #Среда выполнения джоба
+    steps: #Начало секции шагов
+      - name: Print full_tech_info #Название шага
+        run: sudo lshw #Команда, которая будет выполнена в терминале
+
+  print_short_technical_info: #Начало секции третий джобы
+    runs-on: ubuntu-latest #Среда выполнения джоба
+    steps: #Начало секции шагов
+      - name: Print short_tech_info #Название шага
+        run: sudo lshw -short #Команда, которая будет выполнена в терминале
+
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by Gitea!"
       - run: echo "The name of your branch is ${{ gitea.ref }} and your repository is ${{ gitea.repository }}."
       - name: Check out repository code
