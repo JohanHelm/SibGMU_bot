@@ -26,7 +26,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           port: ${{secrets.SSH_PORT}}
           user: ${{secrets.SSH_USER}}
-          host_fingerprint: ${{secrets.SSH_HOST_FINGERPRINT}}
+          #host_fingerprint: ${{secrets.SSH_HOST_FINGERPRINT}}
           private_key: ${{secrets.SSH_PRIVATE_KEY}}
           command: echo 'Hello, World!'
 
