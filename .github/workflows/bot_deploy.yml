@@ -21,7 +21,7 @@ jobs:
           echo test, and deploy your project.
 
       - name: Run command on remote server
-        uses: D3rHase/ssh-command-action@v0.2.2
+        uses: D3rHase/ssh-command-action@v0.3
         with:
           host: ${{secrets.SSH_HOST}}
           port: ${{secrets.SSH_PORT}}
