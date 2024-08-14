@@ -26,10 +26,10 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           port: ${{secrets.SSH_PORT}}
           user: ${{secrets.SSH_USER}}
-          password: ${{secrets.SSH_PASSWORD}}
-          #private_key: ${{secrets.SSH_PRIVATE_KEY}}
+          host_fingerprint: ${{secrets.SSH_HOST_FINGERPRINT}}
+          private_key: ${{secrets.SSH_PRIVATE_KEY}}
           command: |
-            cd ${{ secrets.PROJECT_FOLDER }};
+            cd ${{ variables.PROJECT_FOLDER }};
             git checkout main;
             git pull;
             docker-compose --file docker-compose.prod.yml down;
