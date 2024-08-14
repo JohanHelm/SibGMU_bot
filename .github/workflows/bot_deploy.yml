@@ -28,10 +28,14 @@ jobs:
           user: ${{secrets.SSH_USER}}
           host_fingerprint: ${{secrets.SSH_HOST_FINGERPRINT}}
           private_key: ${{secrets.SSH_PRIVATE_KEY}}
-          command: |
-            cd ${{ secrets.PROJECT_FOLDER }};
-            git checkout main;
-            git pull;
-            docker-compose --file docker-compose.prod.yml down;
-            docker-compose --file docker-compose.prod.yml up -d;
-            docker system prune --all --force;
+          command: echo 'Hello, World!'
+
+      - name: Notify Command Success
+        run: echo "Command executed on ${{ secrets.HOST }} successfully!"
+#          command: |
+#            cd ${{ secrets.PROJECT_FOLDER }};
+#            git checkout main;
+#            git pull;
+#            docker-compose --file docker-compose.prod.yml down;
+#            docker-compose --file docker-compose.prod.yml up -d;
+#            docker system prune --all --force;
