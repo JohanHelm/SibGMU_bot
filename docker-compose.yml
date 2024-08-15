@@ -8,5 +8,7 @@ services:
     env_file: 
       - ./secrets/.env
     restart: always
+    volumes:
+      - /home/pp/big/work/SibGMU/SibGMU_bot:/bot
     command: >
         sh -c "python main.py"

@@ -5,6 +5,7 @@ COPY requirements.txt /bot
 RUN  pip install --upgrade pip \
     && pip install -r requirements.txt 
 
-COPY . /bot  
+VOLUME /bot
+# COPY . /bot  
 
 # CMD ["python", "main.py"]
